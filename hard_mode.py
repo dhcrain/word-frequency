@@ -35,13 +35,14 @@ for word in book.split(" "):
 sorted_hist = sorted(histogram.items(), key=operator.itemgetter(1))
 
 for idx, item in enumerate(sorted_hist[:-21:-1]):
-    #large = max(sorted_hist[-1][1])
+    large = sorted_hist[:-21:-1][0][1]
     word, count = item
-    #count = (count)
+    #m_count = max(count)
+    # print(sorted_hist[:-21:-1])
     # print(idx + 1, word, count)
     # scale = 50. / count[0]
     # print('{:<2}  {:<11}  {:>}'.format(idx + 1, word, count))
-    bar = "#" * int(count * (50 / 347))
+    bar = "#" * int(count * (50 / large))
     # print(bar)
     print('{:<2}  {:<11}  {:>} ({})'.format(idx + 1, word, bar, count))
 
