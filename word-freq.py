@@ -21,4 +21,5 @@ sorted_hist = sorted(histogram.items(), key=operator.itemgetter(1))
 
 for idx, item in enumerate(sorted_hist[:-21:-1]):
     word, count = item
-    print(idx + 1, word, count)
+    # print(idx + 1, word, count)
+    print('{:<2}:  {:<4}  {:>1}'.format(idx + 1, word, count))
