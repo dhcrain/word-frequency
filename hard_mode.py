@@ -1,7 +1,8 @@
 import operator
 import string
+import sys
 
-with open("sample.txt") as opened_file:
+with open(sys.argv[1]) as opened_file:  # http://stackoverflow.com/questions/4117530/sys-argv1-meaning-in-script
     book = (opened_file.read()).lower()
 
 bad_words = ("a,able,about,across,after,all,almost,also,am,among,an,and,any,"
@@ -37,12 +38,5 @@ sorted_hist = sorted(histogram.items(), key=operator.itemgetter(1))
 for idx, item in enumerate(sorted_hist[:-21:-1]):
     large = sorted_hist[:-21:-1][0][1]
     word, count = item
-    #m_count = max(count)
-    # print(sorted_hist[:-21:-1])
-    # print(idx + 1, word, count)
-    # scale = 50. / count[0]
-    # print('{:<2}  {:<11}  {:>}'.format(idx + 1, word, count))
-    bar = "#" * int(count * (50 / large))
-    # print(bar)
-    print('{:<2}  {:<11}  {:>} ({})'.format(idx + 1, word, bar, count))
-
+    graph = "#" * int(count * (50 / large))
+    print('{:<2}  {:>11}  {} ({})'.format(idx + 1, word, graph, count))
