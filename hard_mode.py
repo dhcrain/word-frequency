@@ -39,4 +39,4 @@ for idx, item in enumerate(sorted_hist[:-21:-1]):
     large = sorted_hist[:-21:-1][0][1]
     word, count = item
     graph = "#" * int(count * (50 / large))
-    print('{:<2}  {:>11}  {} ({})'.format(idx + 1, word, graph, count))
+    print('{:<2}  {:>12}  {} ({})'.format(idx + 1, word, graph, count))
